@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int hcf(int x,int y)
+{
+    if(x!=y)
+    {
+        int a=max(x,y);
+        int b=min(x,y);
+        hcf(a-b,b);
+    }
+    else
+    return x;
+}
+int main()
+ {
+	int t;
+    cin>>t;
+    for(int i=0;i<t;i++)
+    {
+        int n;
+        cin>>n;
+        long l=1;
+        for(int i=2;i<=n;i++)
+        {
+            l=(l*i)/hcf(l,i);
+        }
+        cout<<l<<endl;
+    }
+        
+}
